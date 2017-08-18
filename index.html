@@ -93,21 +93,38 @@ var svg = d3.select("body").append("svg")
   data = [
     { 'x' : -38,
       'y' : -27,
-      'char' : 'dilma' },
+      'char' : 'dilma',
+      'bench' : 'true' },
          { 'x' : -40,
       'y' : 50,
-      'char' : 'lula' },
+      'char' : 'lula',
+      'bench' : true },
       { 'x' : 70,
       'y' : 50,
-      'char' : 'bolsonaro' },
+      'char' : 'bolsonaro',
+      'bench' : true },
       { 'x' : 50,
       'y' : 10,
       'char' : 'doria',
       'bench' : true },
+      {'char' : 'che',
+      'bench' : true},
       { 'x' : -7,
         'y' : -17,
       'char' : 'marina',
-      'bench' : true }]
+      'bench' : true },
+      {'char' : 'heloisa',
+      'bench' : true,
+      },
+      {
+      'char' : 'ciro',
+      'bench' : true},
+      {'char' : 'nazismo',
+      'bench' : true},
+      {'char' : 'haddad',
+      'bench' : true},
+      {'char' : 'luciano',
+      'bench' : true}]
 
 if (window.location.hash) {
   var hash = window.location.hash.substring(1).split(';');
