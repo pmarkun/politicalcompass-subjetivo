@@ -17,9 +17,9 @@
 
 
 // set the dimensions and margins of the graph
-var margin = {top: 20, right: 20, bottom: 30, left: 50},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var margin = {top: 60, right: 20, bottom: 40, left: 50},
+    width = 900 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
 
 // set the ranges
 var x = d3.scaleLinear().range([0, width]);
@@ -42,6 +42,7 @@ var svg = d3.select("body").append("svg")
     .attr("id", "container")
 // Add the X Axis
   var x_axis = svg.append("g")
+    .attr("transform", "translate(20,60)")
   x_axis.append("text")
     .text("Esquerda")
     .attr("width", 50)
@@ -64,18 +65,19 @@ var svg = d3.select("body").append("svg")
 
   // Add the Y Axis
   var y_axis = svg.append("g")
+    .attr("transform", "translate(20,60)")
 
    y_axis.append("text")
       .text("Autoritária")
       .attr("width", 50)
       .attr("x", width/2-50)
-      .attr("y", -10)
+      .attr("y", -20)
     
     y_axis.append("text")
       .text("Libertária")
       .attr("width", 50)
       .attr("x", width/2-50)
-      .attr("y", height+10)
+      .attr("y", height+20)
 
     y_axis.append("line")
         .attr("x1", width/2)
@@ -119,7 +121,6 @@ if (window.location.hash) {
       'y' : coord[1],
       'char' : coord[2]
     });
-    console.log(data);
   }
 }
 
@@ -152,7 +153,7 @@ if (window.location.hash) {
         })
       .attr("y", function(d) {
         if (d['bench']) {
-          return -40;
+          return 0;
           }
         else {
           return y(d['y'])-P_HEIGHT;
